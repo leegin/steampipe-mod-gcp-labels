@@ -56,11 +56,6 @@ benchmark "mandatory" {
     control.dataproc_cluster_mandatory,
     control.dataproc_job_mandatory,
     control.pubsub_subscription_mandatory,
-    control.pubsub_topic_mandatory,
-    control.bigtable_instance_mandatory,
-    control.dataproc_cluster_mandatory,
-    control.dataproc_job_mandatory,
-    control.pubsub_subscription_mandatory,
     control.pubsub_topic_mandatory
   ]
 
