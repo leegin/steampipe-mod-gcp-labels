@@ -51,12 +51,7 @@ benchmark "mandatory" {
     control.compute_snapshot_mandatory,
     control.dns_managed_zone_mandatory,
     control.sql_database_instance_mandatory,
-    control.storage_bucket_mandatory,
-    control.bigtable_instance_mandatory,
-    control.dataproc_cluster_mandatory,
-    control.dataproc_job_mandatory,
-    control.pubsub_subscription_mandatory,
-    control.pubsub_topic_mandatory
+    control.storage_bucket_mandatory
   ]
 
   tags = merge(local.gcp_labels_common_tags, {
@@ -186,52 +181,6 @@ control "storage_bucket_mandatory" {
   title       = "Storage buckets should have mandatory labels"
   description = "Check if Storage buckets have mandatory labels."
   sql         = replace(local.mandatory_sql_location, "__TABLE_NAME__", "gcp_storage_bucket")
-  param "mandatory_labels" {
-    default = var.mandatory_labels
-  }
-}
-
-
-control "bigtable_instance_mandatory" {
-  title       = "Bigtable instances should have mandatory labels"
-  description = "Check if Bigtable instances have mandatory labels."
-  sql         = replace(local.mandatory_sql_location, "__TABLE_NAME__", "gcp_bigtable_instance")
-  param "mandatory_labels" {
-    default = var.mandatory_labels
-  }
-}
-
-control "dataproc_cluster_mandatory" {
-  title       = "Dataproc cluster should have mandatory labels"
-  description = "Check if Dataproc cluster have mandatory labels."
-  sql         = replace(local.mandatory_sql_location, "__TABLE_NAME__", "gcp_dataproc_cluster")
-  param "mandatory_labels" {
-    default = var.mandatory_labels
-  }
-}
-
-control "dataproc_job_mandatory" {
-  title       = "Dataproc job should have mandatory labels"
-  description = "Check if Dataproc job have mandatory labels."
-  sql         = replace(local.mandatory_sql_location, "__TABLE_NAME__", "gcp_dataproc_job")
-  param "mandatory_labels" {
-    default = var.mandatory_labels
-  }
-}
-
-control "pubsub_subscription_mandatory" {
-  title       = "Pubsub subscription should have mandatory labels"
-  description = "Check if Pubsub subscription have mandatory labels."
-  sql         = replace(local.mandatory_sql_location, "__TABLE_NAME__", "gcp_pubsub_subscription")
-  param "mandatory_labels" {
-    default = var.mandatory_labels
-  }
-}
-
-control "pubsub_topic_mandatory" {
-  title       = "Pubsub topic should have mandatory labels"
-  description = "Check if Pubsub topic have mandatory labels."
-  sql         = replace(local.mandatory_sql_location, "__TABLE_NAME__", "gcp_pubsub_topic")
   param "mandatory_labels" {
     default = var.mandatory_labels
   }
