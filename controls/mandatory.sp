@@ -52,10 +52,10 @@ benchmark "mandatory" {
     control.dns_managed_zone_mandatory,
     control.sql_database_instance_mandatory,
     control.storage_bucket_mandatory,
-    control.bigtable_instance_mandatory
-    control.dataproc_cluster_mandatory
-    control.dataproc_job_mandatory
-    control.pubsub_subscription_mandatory
+    control.bigtable_instance_mandatory,
+    control.dataproc_cluster_mandatory,
+    control.dataproc_job_mandatory,
+    control.pubsub_subscription_mandatory,
     control.pubsub_topic_mandatory
   ]
 
