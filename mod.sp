@@ -5,6 +5,11 @@ locals {
     plugin   = "gcp"
     service  = "GCP"
   }
+  kubernetes_labels_common_tags = {
+    category = "Tagging"
+    plugin   = "gcp"
+    service  = "GCP"
+  }
 }
 
 mod "gcp_labels" {
