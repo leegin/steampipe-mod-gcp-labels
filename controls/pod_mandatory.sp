@@ -38,7 +38,7 @@ locals {
 }
 
 benchmark "pod_mandatory" {
-  title       = "Mandatory"
+  title       = "Pod Mandatory Labels"
   description = "Resources should all have a standard set of labels applied for functions like resource organization, automation, cost control, and access control."
   children = [
     control.pod_mandatory

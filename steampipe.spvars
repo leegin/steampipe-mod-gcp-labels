@@ -1,3 +1,0 @@
-mandatory_labels = ["env", "name", "team"]
-prohibited_labels = ["password", "key"]
-label_limit = 60
