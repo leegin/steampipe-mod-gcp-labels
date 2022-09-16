@@ -38,7 +38,6 @@ benchmark "unlabeled" {
     control.storage_bucket_unlabeled,
     control.bigtable_instance_unlabeled,
     control.dataproc_cluster_unlabeled,
-    control.dataproc_job_unlabeled,
     control.pubsub_subscription_unlabeled,
     control.pubsub_topic_unlabeled
   ]
@@ -141,12 +140,6 @@ control "dataproc_cluster_unlabeled" {
   title       = "Dataproc cluster should be labeled"
   description = "Check if Dataproc cluster have at least 1 label."
   sql         = replace(local.unlabeled_sql_location, "__TABLE_NAME__", "gcp_dataproc_cluster")
-}
-
-control "dataproc_job_unlabeled" {
-  title       = "Dataproc job should be labeled"
-  description = "Check if Dataproc job have at least 1 label."
-  sql         = replace(local.unlabeled_sql_location, "__TABLE_NAME__", "gcp_dataproc_job")
 }
 
 control "pubsub_subscription_unlabeled" {

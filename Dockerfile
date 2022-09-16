@@ -6,6 +6,7 @@ RUN apt-get update -y \
 # Install the aws and steampipe plugins for Steampipe (as steampipe user).
 USER steampipe:0
 RUN  mkdir -p ~/.config/gcloud \
+&& mkdir -p ~/.kube/ \
 &&  steampipe plugin install gcp \
 && steampipe plugin install kubernetes
 RUN  git clone https://github.com/leegin/steampipe-mod-gcp-labels.git /workspace

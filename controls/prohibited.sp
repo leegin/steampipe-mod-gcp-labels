@@ -59,7 +59,6 @@ benchmark "prohibited" {
     control.storage_bucket_prohibited,
     control.bigtable_instance_prohibited,
     control.dataproc_cluster_prohibited,
-    control.dataproc_job_prohibited,
     control.pubsub_subscription_prohibited,
     control.pubsub_topic_prohibited
   ]
@@ -213,15 +212,6 @@ control "dataproc_cluster_prohibited" {
   title       = "Dataproc clusters should not have prohibited labels"
   description = "Check if dataproc clusters have any prohibited labels."
   sql         = replace(local.prohibited_sql_location, "__TABLE_NAME__", "gcp_dataproc_cluster")
-  param "prohibited_labels" {
-    default = var.prohibited_labels
-  }
-}
-
-control "dataproc_job_prohibited" {
-  title       = "Dataproc jobs should not have prohibited labels"
-  description = "Check if dataproc jobs have any prohibited labels."
-  sql         = replace(local.prohibited_sql_location, "__TABLE_NAME__", "gcp_dataproc_job")
   param "prohibited_labels" {
     default = var.prohibited_labels
   }
